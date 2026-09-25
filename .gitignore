@@ -1,0 +1,92 @@
+# Unreal Engine Gitignore
+# https://github.com/github/gitignore/blob/main/UnrealEngine.gitignore
+
+# Directories
+Binaries/
+Build/
+DerivedDataCache/
+Intermediate/
+Saved/
+
+# VS Code and Visual Studio
+.vscode/
+.vs/
+*.sln
+*.suo
+*.user
+*.userosvs
+*.sln.docstates
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
+
+# Xcode
+Highly-build/
+*.xcodeproj
+*.xcworkspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Source Textures
+*.TGA
+*.tga
+
+# Python cache
+__pycache__/
+*.pyc
+
+# ROS / SIRV dependencies (binaries presentes em ambas as maquinas)
+Plugins/Sirv/SirvDependencies/
+
+
+# =====================================================
+# GitHub Showcase — assets grandes não utilizados
+# (essas regras evitam que voltem em futuros merges)
+# =====================================================
+Content/Sirv/Static/GenericMaterials/Tiles/
+Content/Sirv/Static/GenericMaterials/Ground/
+Content/Sirv/Static/GenericMaterials/Masters/
+Content/Sirv/Static/GenericMaterials/00_MastersOpt/
+Content/Sirv/Static/GenericMaterials/Concrete/
+Content/Sirv/Static/GenericMaterials/Grass/
+Content/Sirv/Static/GenericMaterials/RoofBitumen/
+Content/Sirv/Static/GenericMaterials/Brick/
+Content/Sirv/Static/GenericMaterials/Gutters_Curbs/
+Content/Sirv/Static/GenericMaterials/RoadStencil/
+Content/Sirv/Static/GenericMaterials/LaneMarking/
+Content/Sirv/Static/GenericMaterials/Water/
+Content/Sirv/Static/GenericMaterials/WetPavement/
+Content/Sirv/Static/GenericMaterials/CheapMaterials/
+Content/Sirv/Static/GenericMaterials/Generic_Rock_Material/
+Content/Sirv/Static/GenericMaterials/Licenseplates/Textures/
+Content/Sirv/Static/Rain_material/
+Content/Sirv/Static/ConstructionSite/Demo/
+Content/Sirv/Static/ConstructionSite/Environment/Bulldozer_01/
+Content/Sirv/Static/ConstructionSite/Environment/MetalContainer_01/
+Content/Sirv/Static/ConstructionSite/Environment/RoadBarrier_01/
+Content/Sirv/Static/ConstructionSite/Environment/TileGround_01/
+Content/Sirv/Static/ConstructionSite/Environment/Sky_01/
+Content/Sirv/Static/ConstructionSite/Environment/Ruble_03/
+Content/Sirv/Static/ConstructionSite/Environment/Cobble_01/
+Content/Sirv/Static/ConstructionSite/Environment/Ground_01/
+Content/Sirv/Static/ConstructionSite/Environment/Barrel_01/
+Content/Sirv/Static/ConstructionSite/Environment/BlockBrick_01/
+Content/Sirv/Static/ConstructionSite/Environment/SafetyHelmet_01/
+Content/Sirv/Static/props/Meshes/Textures/
+Content/Sirv/Blueprints/Vehicles/CAT7295/
+# Asphalt — manter só arquivos referenciados
+Content/Sirv/Static/GenericMaterials/Asphalt/Asphalt*
+Content/Sirv/Static/GenericMaterials/Asphalt/M_Asphalt*
+Content/Sirv/Static/GenericMaterials/Asphalt/MI_Asphalt*
+Content/Sirv/Static/GenericMaterials/Asphalt/T_Asphalt01*
+Content/Sirv/Static/GenericMaterials/Asphalt/T_Asphalt02Cracks*
+Content/Sirv/Static/GenericMaterials/Asphalt/T_Asphalt02_n*
+Content/Sirv/Static/GenericMaterials/Asphalt/T_Asphalt02_oc*
+Content/Sirv/Static/GenericMaterials/Asphalt/T_Asphalt02_r*
+Content/Sirv/Static/GenericMaterials/Asphalt/T_NewAsphalt*
+Content/Sirv/Static/GenericMaterials/Asphalt/T_Asphalt.uasset
+Content/Sirv/Static/GenericMaterials/Asphalt/asphalt_02*
+Content/Sirv/Static/GenericMaterials/Asphalt/4.uasset

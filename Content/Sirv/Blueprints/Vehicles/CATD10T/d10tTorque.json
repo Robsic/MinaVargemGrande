@@ -1,0 +1,40 @@
+{
+	"floatCurve":
+	{
+		"keys": [
+			{
+				"interpMode": "RCIM_Linear",
+				"tangentMode": "RCTM_Auto",
+				"tangentWeightMode": "RCTWM_WeightedNone",
+				"time": 1200,
+				"value": 700,
+				"arriveTangent": 0,
+				"arriveTangentWeight": 0,
+				"leaveTangent": 0,
+				"leaveTangentWeight": 0
+			},
+			{
+				"interpMode": "RCIM_Linear",
+				"tangentMode": "RCTM_Auto",
+				"tangentWeightMode": "RCTWM_WeightedNone",
+				"time": 1323.1097412109375,
+				"value": 6488.6787109375,
+				"arriveTangent": 0,
+				"arriveTangentWeight": 0,
+				"leaveTangent": 0,
+				"leaveTangentWeight": 0
+			}
+		],
+		"defaultValue": 3.4028234663852886e+38,
+		"preInfinityExtrap": "RCCE_Constant",
+		"postInfinityExtrap": "RCCE_Constant"
+	},
+	"bIsEventCurve": false,
+	"assetImportData":
+	{
+		"_ClassName": "AssetImportData",
+		"sourceData":
+		{
+		}
+	}
+}
