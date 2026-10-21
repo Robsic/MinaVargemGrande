@@ -1,72 +1,36 @@
-# MinaVargemGrande — Simulação Digital de Mineração
+# MinaVargemGrande — Simulador VR de Mineração (UNIFEI & Vale)
 
-Projeto de simulação 3D interativa da Mina Vargem Grande, desenvolvido em **Unreal Engine 5** com integração **ROS2** via plugin SIRV.
+Projeto de simulação 3D interativa da **Mina do Pico (Complexo Vargem Grande)**, desenvolvido na **Unreal Engine 5** com integração **ROS 2** via plugin SIRV.
 
 ## 📋 Sobre o Projeto
 
-Simulação de campo de lavra com veículos pesados de mineração, rotas de transporte, zonas de velocidade e marcadores de ponto de interesse (POI). Desenvolvido como ferramenta de análise operacional e treinamento.
+Simulação em escala real (1:1) de operações de lavra com caminhões fora-de-estrada e escavadeiras hidráulicas, reconstrução topográfica 2026 via nuvens de pontos LiDAR (`.las`) e ortofotos georreferenciadas (`.tif`), demarcação de zonas de velocidade (`.yaml`) e treinamento operacional em Realidade Virtual.
 
 ## 🚜 Veículos Implementados
 
-| Veículo | Tipo | Descrição |
+| Veículo | Tipo | Destaques Técnicos |
 |---|---|---|
-| **CAT 789D** | Caminhão fora-de-estrada | Modelo custom riggado com blueprint de simulação |
-| **PC 8000** | Escavadeira hidráulica | Modelo custom com sistema de braços e carregamento bilateral |
-| CAT 793F | Caminhão fora-de-estrada | Veículo do plugin SIRV |
-| CAT D10T | Trator de esteiras | Veículo do plugin SIRV |
+| **CAT 789D** | Caminhão fora-de-estrada (181 t) | Malha e rig customizados (20 ossos), iluminação funcional em 18 slots de materiais e Display Externo de Carga (TPMS/VIMS 3D UMG) |
+| **PC 8000** | Escavadeira hidráulica | Cinemática de braços/caçamba e procedimento de carregamento bilateral |
+| **CAT 793F** | Caminhão fora-de-estrada | Veículo base do plugin SIRV |
+| **CAT D10T** | Trator de esteiras | Equipamento de apoio operacional |
 
-## 🗺️ Mapas
+## 🗺️ Mapas Principais
 
-- **MVG_SAP** — Setor SAP da mina (estado atual)
-- **MVG_GAL** — Setor GAL da mina (estado atual)
-- **MVG_CIA** — Setor CIA da mina (estado atual)
-- **MVG_SIMULATION** — Mapa de simulação integrada
-- **SAP_Futuro / GAL_Futuro** — Cenários de planejamento futuro
+- **`MVG_SIMULATION_2026`** — Novo cenário 2026 da Mina do Pico ($5611 \times 9691\text{ px}$, $18,30\text{ km}^2$, SIRGAS 2000 / UTM 23S)
+- **`MVG_SIMULATION`** — Cenário integrado de simulação operacional
+- **`Teste789D`** — Mapa leve de bancada para validação dinâmica e visual do CAT 789D
+- **`SAP_Futuro / GAL_Futuro`** — Cenários de planejamento futuro de lavra
 
 ## 🛠️ Tecnologias
 
-- **Unreal Engine 5** — Motor de simulação 3D
-- **ROS2 / SIRV** — Integração com sistemas robóticos e ROS
-- **C++** — Plugin SIRV customizado
-- **Python** — Scripts de importação de dados e exportação de zonas
+- **Unreal Engine 5** (Chaos Vehicles Physics, Landscape, Niagara, UMG 3D)
+- **ROS 2 / SIRV** — Comunicação e telemetria robótica em C++
+- **Blender 3D** — Modelagem, UV Mapping e Rigging veicular
+- **Python** — Processamento geoespacial (LiDAR/GeoTIFF) e automação no Editor UE5
 
-## 📁 Estrutura do Repositório
+## 📄 Documentação Técnica
 
-```
-MinaVargemGrande/
-├── Config/                         # Configurações do projeto UE5
-├── Content/
-│   ├── Blueprints/                 # BPs customizados (POI, SpeedZone, Rotas)
-│   ├── Landscapes/                 # Terrenos e materiais da mina
-│   │   ├── Levels/                 # Mapas principais
-│   │   ├── Levels_Futuro/          # Mapas de planejamento
-│   │   └── Material/               # Materiais de terreno
-│   ├── Python/                     # Scripts Python para importação/exportação
-│   └── Sirv/                       # Assets do plugin SIRV + veículos customizados
-│       ├── Blueprints/Vehicles/CAT789D/   # ← Desenvolvimento próprio
-│       └── Blueprints/Vehicles/PC8000/    # ← Desenvolvimento próprio
-├── Plugins/Sirv/Source/            # Código-fonte C++ do plugin SIRV
-└── Script/                         # Scripts auxiliares
-```
-
-## 🔧 Como usar
-
-1. Instale o **Unreal Engine 5.3+**
-2. Clone este repositório com Git LFS habilitado:
-   ```bash
-   git lfs install
-   git clone https://github.com/IagoVilela05/MinaVargemGrande.git
-   ```
-3. Abra `MinaVargemGrande.uproject` no Unreal Engine
-4. O plugin SIRV requer dependências ROS2 — consulte `Plugins/Sirv/SirvDependencies/`
-
-> **Nota:** Este repositório contém os assets de desenvolvimento. Assets pesados do plugin SIRV (veículos genéricos, materiais genéricos) estão disponíveis no repositório principal no Azure Repos.
-
-## 📄 Documentação
-
-- [`DOCUMENTACAO_CARREGAMENTO_BILATERAL_ESCAVADEIRA.md`](DOCUMENTACAO_CARREGAMENTO_BILATERAL_ESCAVADEIRA.md) — Documentação do sistema de carregamento bilateral da PC8000
-- [`VALIDACAO_E_PROXIMOS_PASSOS_CAT789D.md`](VALIDACAO_E_PROXIMOS_PASSOS_CAT789D.md) — Validação e próximos passos do CAT789D
-
----
-
-*Desenvolvido durante estágio em simulação de mineração.*
+- [`GEMINI.md`](GEMINI.md) — Arquitetura geral do projeto e especificações técnicas
+- [`VALIDACAO_E_PROXIMOS_PASSOS_CAT789D.md`](VALIDACAO_E_PROXIMOS_PASSOS_CAT789D.md) — Especificação do Rig, física Chaos e iluminação do CAT 789D
+- [`DOCUMENTACAO_CARREGAMENTO_BILATERAL_ESCAVADEIRA.md`](DOCUMENTACAO_CARREGAMENTO_BILATERAL_ESCAVADEIRA.md) — Procedimento operacional da escavadeira PC8000
