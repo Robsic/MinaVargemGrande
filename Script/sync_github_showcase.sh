@@ -9,7 +9,8 @@
 
 set -e
 
-PROJECT_DIR="/home/iago/Documentos/Unreal Projects/MinaVargemGrande"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 cd "$PROJECT_DIR"
 
 COMMIT_MSG="${1:-$(git log -1 --pretty=%B development)}"
