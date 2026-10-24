@@ -54,9 +54,9 @@ Projetos Externos Vinculados:
 ## 🚛 Frente 1: Simulador VR de Mineração / SIRV (UNIFEI & Vale)
 
 ### 1.1 Modelagem 3D & Rigging do CAT 789D (`VR - Mining 789D/`)
-* **Arquivo 3D Principal:** `VR - Mining 789D/CAT789D_Rigged.blend` (Contém 18 slots de materiais e recortes manuais de Knife Tool nas setas da passarela e faróis superiores/milha).
-* **Exportação FBX:** `VR - Mining 789D/CAT789D_Rigged.fbx`
-* **Script de Automação do Rig:** `VR - Mining 789D/build_cat789d_rig.py` (Script histórico base. NÃO rodar direto sobre o blend bruto sem preservar os recortes dos 18 slots).
+* **Arquivo 3D Principal:** `VR - Mining 789D/Modelos_CAT789D/CAT789D_Rigged.blend` (Contém 18 slots de materiais e recortes manuais de Knife Tool nas setas da passarela e faróis superiores/milha).
+* **Exportação FBX:** `VR - Mining 789D/Modelos_CAT789D/CAT789D_Rigged.fbx`
+* **Script de Automação do Rig:** `VR - Mining 789D/Scripts_Rig/build_cat789d_rig.py` (Script histórico base. NÃO rodar direto sobre o blend bruto sem preservar os recortes dos 18 slots).
 * **Slots de Materiais de Iluminação (18 slots no total):**
   * Slot 11: `CAT789D_Farois_Principais` (15 faces)
   * Slot 12: `CAT789D_Setas_Esq` (5 faces: traseira + passarela frontal + passarela lateral)
@@ -157,8 +157,8 @@ Projetos Externos Vinculados:
 ## 📚 4. Arquivos de Documentação Detalhada Existentes
 
 Quando precisar de detalhes profundos sobre especificações, consulte diretamente estes arquivos em vez de pesquisar na árvore:
-1. `VR - Mining 789D/VALIDACAO_E_PROXIMOS_PASSOS_CAT789D.md` — Histórico do Rig, dimensões, ossos, pneus, física Chaos e mapeamento do CAT 793F vs 789D.
-2. `VR - Mining 789D/CONTEXTO_E_PLANO_IMPLEMENTACAO_UE5_YAML.md` — Especificação do formato `.yaml` de limites de velocidade e script `export_speed_zones.py`.
+1. `VR - Mining 789D/Docs/VALIDACAO_E_PROXIMOS_PASSOS_CAT789D.md` — Histórico do Rig, dimensões, ossos, pneus, física Chaos e mapeamento do CAT 793F vs 789D.
+2. `VR - Mining 789D/Docs/CONTEXTO_E_PLANO_IMPLEMENTACAO_UE5_YAML.md` — Especificação do formato `.yaml` de limites de velocidade e script `export_speed_zones.py`.
 3. `/home/iago/Documentos/Unreal Projects/MinaVargemGrande/DOCUMENTACAO_CARREGAMENTO_BILATERAL_ESCAVADEIRA.md` — Procedimento operacional de carregamento bilateral na mina.
 4. `RelatorioVale/relatorio-projeto-mina-pico-2026/README.md` — Estrutura do relatório ativo da Mina do Pico.
 5. `RelatorioVale/relatorio-projeto-app-atualizaco-mina-conceicao/README.md` — Detalhes da estrutura do relatório modelo de referência.
