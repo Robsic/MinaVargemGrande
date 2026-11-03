@@ -173,6 +173,10 @@ def export_all_speed_zones_to_yaml(
                 speed_limit = float(speed_limit)
             except:
                 speed_limit = 10.0
+
+            if speed_limit <= 0.0:
+                print(f"[BP_SpeedZone] Ignorando '{label}' no YAML de velocidade (SpeedLimit={speed_limit:.1f} <= 0.0)")
+                continue
                 
             zone_code = str(zone_code).replace(" ", "_")
             if zone_code == "None" or not zone_code:

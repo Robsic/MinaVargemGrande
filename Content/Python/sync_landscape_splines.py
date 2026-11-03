@@ -172,6 +172,13 @@ def sync_landscape_splines_to_pontaletes(
         new_actor = actor_subsystem.spawn_actor_from_class(bp_class, start_loc, unreal.Rotator(0, 0, 0))
         new_actor.set_actor_label(f"Pontalete_AutoSpline_{chain_idx + 1:02d}")
 
+        # Se for a Rota 02 (Cianita -> Rejeito), adicionar automaticamente a Tag de Zona de Deslizamento
+        if chain_idx == 1:
+            try:
+                new_actor.tags = [unreal.Name("SlipZone"), unreal.Name("SlipZone_Road")]
+            except Exception:
+                pass
+
         # PASSO A: Configurar TODAS as variáveis do Ator PRIMEIRO
         # (Pois cada set_editor_property no Ator destrói e recria os componentes internos!)
         for p_name, p_val in template_props.items():
