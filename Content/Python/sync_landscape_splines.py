@@ -84,8 +84,6 @@ def split_and_order_chains(control_points, max_gap_cm=25000.0):
 
 def sync_landscape_splines_to_pontaletes(
     pontalete_bp_path="/Game/Sirv/Static/props/Pontaletes/Pontalete_BP",
-    road_margin_offset=-50.0,
-    pontalete_spacing_offset=1500.0,
 ):
     """
     Lê todas as Landscape Splines do terreno ativo e cria/atualiza atores Pontalete_BP
@@ -180,22 +178,10 @@ def sync_landscape_splines_to_pontaletes(
                 pass
 
         # PASSO A: Configurar TODAS as variáveis do Ator PRIMEIRO
-        # (Pois cada set_editor_property no Ator destrói e recria os componentes internos!)
+        # (Mantém o Default Value de RoadWidthOffset e Offset definidos no próprio Pontalete_BP)
         for p_name, p_val in template_props.items():
             try:
                 new_actor.set_editor_property(p_name, p_val)
-            except Exception:
-                pass
-
-        for prop_name in ["RoadWidthOffset", "road_width_offset"]:
-            try:
-                new_actor.set_editor_property(prop_name, float(road_margin_offset))
-            except Exception:
-                pass
-
-        for prop_name in ["Offset", "offset"]:
-            try:
-                new_actor.set_editor_property(prop_name, float(pontalete_spacing_offset))
             except Exception:
                 pass
 
